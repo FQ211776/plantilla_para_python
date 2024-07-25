@@ -22,5 +22,24 @@
       },
       "problemMatcher": []
     },
+    {
+      "label": "Run Pytest",
+      "type": "shell",
+      "command": "pytest",
+      "args": [
+        "tests" // Directorio donde se encuentran tus tests
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
   ]
 }
