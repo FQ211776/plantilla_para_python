@@ -23,7 +23,7 @@ project_name=${1:-"my_project"}
 repo_url="https://github.com/FQ211776/plantilla_para_python"
 
 # Directorio del proyecto (se creará si no existe)
-project_dir="$HOME/projects/$project_name"
+project_dir="$HOME/Dropbox/python_projects/$project_name"
 
 # Verificar si el proyecto ya existe
 if [ -d "$project_dir" ]; then
@@ -65,6 +65,30 @@ else
 
   logo "El entorno virtual se ha creado y activado correctamente."
 fi
+
+# Preguntar si se desea clonar el repositorio o iniciar un nuevo proyecto
+read -p "¿Deseas crear un repositorio nuevo en github con este projecto? (s/n)? " nuevo_repo
+echo""
+
+if [ "$nuevo_repo" == "s" ]; then
+  if ! command -v github-cli &>/dev/null; then # Verifica si gh NO está instalado
+    sudo pacman -S --noconfirm github-cli
+    echo "github-cli instalado satisfactoriamente"
+  fi
+
+  cd $project_dir
+
+  rm -rf .git
+  git init -b master
+  git add --all .
+  git commit -m 'La historia comienza aqui'
+  gh repo create --source=. --private
+  git push -u origin HEAD
+  logo "Repositorio creado satusfactoriamente en $project_dir."
+
+fi
+
+cd $project_dir
 
 # Abrir VSCode en el directorio del proyecto
 code-insiders "$project_dir"
