@@ -1,0 +1,9 @@
+{
+  "dev.containers.defaultExtensions": [
+    "mutantdino.resourcemonitor"
+  ],
+  "mounts": [
+    "source=profile,target=/root,type=volume",
+    "target=/root/.vscode-server,type=volume"
+  ]
+}
