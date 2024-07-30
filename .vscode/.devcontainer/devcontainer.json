@@ -1,0 +1,14 @@
+{
+    "name": "My Project Dev Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9", // Puedes cambiar la imagen base según tus necesidades
+    "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "esbenp.prettier-vscode"
+    ],
+    "settings": {
+        "python.pythonPath": "/usr/local/bin/python"
+    },
+    "postCreateCommand": "pip install -r requirements.txt", // Comando para instalar dependencias después de crear el contenedor
+    "remoteUser": "vscode"
+}
