@@ -27,7 +27,7 @@
       "type": "shell",
       "command": "pytest",
       "args": [
-        "tests" // Directorio donde se encuentran tus tests
+        "tests"
       ],
       "group": {
         "kind": "test",
@@ -47,6 +47,82 @@
       "command": "make",
       "args": [
         "clean"
+      ],
+      "group": {
+        "kind": "none",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Install Dependencies",
+      "type": "shell",
+      "command": "make",
+      "args": [
+        "install"
+      ],
+      "group": {
+        "kind": "none",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Create Virtual Environment",
+      "type": "shell",
+      "command": "make",
+      "args": [
+        "venv"
+      ],
+      "group": {
+        "kind": "none",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Delete Virtual Environment",
+      "type": "shell",
+      "command": "make",
+      "args": [
+        "delete_venv"
+      ],
+      "group": {
+        "kind": "none",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Upgrade_Pip",
+      "type": "shell",
+      "command": "make",
+      "args": [
+        "upgrade_pip"
       ],
       "group": {
         "kind": "none",
